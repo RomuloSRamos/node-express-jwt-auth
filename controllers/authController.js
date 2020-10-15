@@ -1,5 +1,6 @@
 const User = require('../models/user');
-const user = require('../models/user');
+const jwt = require('jsonwebtoken');
+
 
 //hendle erros
 const handleErros = (err) => {
@@ -20,6 +21,15 @@ const handleErros = (err) => {
     }
 }
 
+//hendle jwt
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+    return jwt.sign({id},'net ninja secret',{
+        expiresIn:maxAge
+    });
+
+};
+
 module.exports.signup_get = (req, res) => {
     res.render('signup');
 }
@@ -32,7 +42,10 @@ module.exports.signup_post = async (req, res) => {
     const {email,password} = req.body;
     try {
       const user = await User.create({email,password});
-      res.status(201).json(user);
+      const token = createToken(user._id);
+      res.cookie('jwt',token,{ httpOnly: true , maxAge:maxAge * 1000 });
+      res.status(201).json( {user : user._id});
+
     } catch (err) {
         const errors = handleErros(err);
         res.status(400).json({errors});
