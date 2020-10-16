@@ -36,6 +36,7 @@
                  headers:{'Content-Type':'application/json'}
              });
              const data = await res.json();
+             console.log("aqui");
              console.log(data);
              
              if(data.errors){
@@ -43,7 +44,7 @@
                 passwordError.textContent = data.errors.password;
              }
              if(data.user){
-                // location.assign('/');
+                 location.assign('/');
              }
             }
          catch (err) {
