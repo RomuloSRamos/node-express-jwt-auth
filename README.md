@@ -1,5 +1,7 @@
 ##### node-express-jwt-auth 
 [![MongoDB Badge](https://img.shields.io/badge/-Atlas%20MongoDB-6AA127?style=flat-square&labelColor=47A24B&logo=MongoDB&logoColor=white&link=https://www.mongodb.com/cloud/atlas)](https://www.mongodb.com/cloud/atlas)
+[![Heroku Badge](https://img.shields.io/badge/-Heroku-5F259F?style=flat-square&labelColor=430098&logo=Heroku&logoColor=white&link=https://ninja-node-express-jwt-auth.herokuapp.com/)](https://ninja-node-express-jwt-auth.herokuapp.com/)
+
 # THE NINJA SMOOTHIES
   É um projeto de autenticação Node.js com um pequeno front-end com ejs. O foco principal deste projeto foi aprender o uso de autherization JWT e proteção de rotas de usuário não autenticado.
   
