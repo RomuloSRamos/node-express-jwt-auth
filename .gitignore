@@ -116,5 +116,5 @@ dist
 .pnp.*
 
 
-
+.env
 package-lock.json
